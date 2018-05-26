@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from cars.views import CarViewSet
+from cars.views import CarViewSet, BrandViewSet
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("cars/", include(CarViewSet().get_urls())),
+    path("brands/", include(BrandViewSet().get_urls())),
 ]
