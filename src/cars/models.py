@@ -6,6 +6,9 @@ class Brand(models.Model):
     name = models.CharField(max_length=120)
     logo = models.ImageField(null=True, blank=True, upload_to="brands/")
 
+    def __str__(self):
+        return self.name
+
 
 class Car(models.Model):
     FUEL_ELECTRIC = "electric"
@@ -17,3 +20,6 @@ class Car(models.Model):
     fuel = models.CharField(max_length=120, choices=FUEL_CHOICES, default=FUEL_ELECTRIC)
 
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "{brand} - {name}".format(name=self.name, brand=self.brand.name)
