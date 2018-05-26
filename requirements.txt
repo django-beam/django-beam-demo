@@ -1,2 +1,2 @@
 Django>=2.0.0
--e git+https://github.com/django-beam/django-beam.git#egg=django_beam
+-e git+https://github.com/django-beam/django-beam.git#egg=django-beam

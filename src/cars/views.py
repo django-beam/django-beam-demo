@@ -1,3 +1,13 @@
-from django.shortcuts import render
+import beam
 
-# Create your views here.
+from .models import Car, Brand
+
+
+class CarViewSet(beam.ViewSet):
+    model = Car
+    fields = ["name", "wheels"]
+
+
+class BrandViewSet(beam.ViewSet):
+    model = Brand
+    fields = ["name"]
