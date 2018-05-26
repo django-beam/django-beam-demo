@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "cars.apps.CarsConfig",
 ]
-INSTALLED_APPS += ["beam"]
+INSTALLED_APPS += ["beam", "beam.themes.plain"]  # or choose any theme you like
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
