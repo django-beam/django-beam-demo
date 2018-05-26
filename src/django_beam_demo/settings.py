@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "cars.apps.CarsConfig",
 ]
+INSTALLED_APPS += ["beam"]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
