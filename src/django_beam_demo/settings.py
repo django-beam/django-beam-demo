@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "cars.apps.CarsConfig",
 ]
-INSTALLED_APPS += ["beam", "beam.themes.bootstrap4"]  # or choose any theme you like
+INSTALLED_APPS += ["beam", "crispy_forms", "beam.themes.bootstrap4"]
+# or choose any theme you like, e.g. "plain"
+# INSTALLED_APPS += ["beam", "beam.themes.plain"]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
