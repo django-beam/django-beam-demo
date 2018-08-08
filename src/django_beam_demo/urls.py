@@ -19,8 +19,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from cars.views import CarViewSet, BrandViewSet
+from beam.views import DashboardView
 
 urlpatterns = [
+    path("", DashboardView.as_view()),
     path("admin/", admin.site.urls),
     path("cars/", include(CarViewSet().get_urls())),
     path("brands/", include(BrandViewSet().get_urls())),
