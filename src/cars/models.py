@@ -23,3 +23,15 @@ class Car(models.Model):
 
     def __str__(self):
         return "{brand} - {name}".format(name=self.name, brand=self.brand.name)
+
+
+class Passenger(models.Model):
+    car = models.ForeignKey(Car, related_name="passengers", on_delete=models.CASCADE)
+
+    name = models.CharField(max_length=255)
+    origin = models.CharField(max_length=255)
+    destination = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
