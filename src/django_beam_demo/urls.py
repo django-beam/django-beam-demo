@@ -22,7 +22,7 @@ from cars.views import CarViewSet, BrandViewSet
 from beam.views import DashboardView
 
 urlpatterns = [
-    path("", DashboardView.as_view()),
+    path("", DashboardView.as_view(), name="dashboard"),
     path("admin/", admin.site.urls),
     path("cars/", include(CarViewSet().get_urls())),
     path("brands/", include(BrandViewSet().get_urls())),
