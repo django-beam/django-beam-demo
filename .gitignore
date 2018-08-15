@@ -5,5 +5,6 @@ env/
 */__pycache__/*
 *.egg-info
 build/
+media/
 dist/
 .tox
