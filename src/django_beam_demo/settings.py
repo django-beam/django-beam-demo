@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "cars.apps.CarsConfig",
+    "customers.apps.CustomersConfig",
+    "projects.apps.ProjectsConfig",
 ]
 INSTALLED_APPS += ["beam", "beam.themes.bootstrap4", "crispy_forms"]  # or choose any theme you like
 

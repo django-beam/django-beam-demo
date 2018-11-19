@@ -13,19 +13,22 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import path, include
 
-from cars.views import CarViewSet, BrandViewSet
 from beam.views import DashboardView
+from customers.views import OrganizationViewSet, PersonViewSet
+from projects.views import ProjectViewSet
 
 urlpatterns = [
     path("", DashboardView.as_view(), name="dashboard"),
     path("admin/", admin.site.urls),
-    path("cars/", include(CarViewSet().get_urls())),
-    path("brands/", include(BrandViewSet().get_urls())),
+    path("organization/", include(OrganizationViewSet().get_urls())),
+    path("person/", include(PersonViewSet().get_urls())),
+    path("project/", include(ProjectViewSet().get_urls())),
+
 ]
 
 if settings.DEBUG:
