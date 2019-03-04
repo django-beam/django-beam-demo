@@ -21,7 +21,11 @@ class NoteInline(beam.RelatedInline):
     title = "Notes"
     foreign_key_field = "organization"
     model = Note
-    fields = ["person", "text"]
+    fields = ["order", "person", "text"]
+    layout = [[["person"], ["text"]]]
+    can_delete = True
+    can_order = True
+    order_field = "order"
 
 
 class NoteDetailInline(NoteInline):

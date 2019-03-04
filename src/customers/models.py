@@ -39,3 +39,8 @@ class Note(models.Model):
     person = models.ForeignKey(Person, null=True, on_delete=models.SET_NULL)
 
     text = models.TextField()
+
+    order = models.PositiveIntegerField()
+
+    class Meta:
+        ordering = ("order", )
