@@ -15,19 +15,20 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib import admin
 from django.urls import path, include
 
+from beam.contrib.auth.views import UserViewSet, GroupViewSet
 from beam.views import DashboardView
 from customers.views import OrganizationViewSet, PersonViewSet
 from projects.views import ProjectViewSet
 
 urlpatterns = [
     path("", DashboardView.as_view(), name="dashboard"),
-    path("admin/", admin.site.urls),
     path("organization/", include(OrganizationViewSet().get_urls())),
     path("person/", include(PersonViewSet().get_urls())),
     path("project/", include(ProjectViewSet().get_urls())),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("auth/", include("beam.contrib.auth.urls")),
 
 ]
 

@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
+    "beam.contrib.auth",  # has to be first because of templates
+    "django.contrib.admin",  # suggested for i18n in auth views
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
@@ -39,8 +40,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "customers.apps.CustomersConfig",
     "projects.apps.ProjectsConfig",
+    "beam",
+    "beam.themes.bootstrap4",
+    "crispy_forms",
 ]
-INSTALLED_APPS += ["beam", "beam.themes.bootstrap4", "crispy_forms"]  # or choose any theme you like
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -84,6 +87,9 @@ DATABASES = {
 }
 
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
@@ -96,6 +102,8 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
+
+LOGIN_REDIRECT_URL = "/"
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
@@ -120,3 +128,5 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
 MEDIA_URL = "/media/"
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
