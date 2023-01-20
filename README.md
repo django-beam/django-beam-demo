@@ -15,7 +15,12 @@ Visit: http://127.0.0.1:8000/
 
 
 ## Login
-http://127.0.0.1:8000/admin/
+As an admin
 ```
-admin:beammeup
+admin.user:beammeup
+```
+
+As a regular user
+```
+regular.user:beammeup
 ```
